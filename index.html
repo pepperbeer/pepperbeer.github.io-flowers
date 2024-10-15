@@ -1,221 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Bouquet of Roses</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0b1d2a;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+            opacity: 0.8;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        h1, h2 {
+            margin: 10px 0;
+            text-align: center; /* Center the text */
+        }
+        
+        .bucket {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            margin-top: 20px; /* Add some margin above the bouquet */
+            width: 80%; /* Set the width of the bucket */
+        }
+        
+        .garden {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the bouquet */
+            gap: 65px; /* Increased space between flowers */
+            max-width: 800px; /* Limit the width of the bouquet */
+        }
+        
+        .rose {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: -30px; /* Overlap roses slightly */
+        }
+        
+        .flower {
+            position: relative;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .petal {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: #FF8A8A; /* Updated pink color */
+            border-radius: 50%; /* Creates rounded petal shape */
+            box-shadow: 0 0 5px #FF8A8A, 0 0 10px #FF8A8A; /* Reduced glowing effect */
+            animation: glow 1.5s infinite alternate; /* Glowing effect */
+        }
+        
+        .petal1 {
+            top: 0;
+            left: 10px;
+            transform: rotate(45deg);
+        }
+        
+        .petal2 {
+            top: 0;
+            left: 0;
+            transform: rotate(-45deg);
+        }
+        
+        .petal3 {
+            top: 15px;
+            left: 20px;
+            transform: rotate(135deg);
+        }
+        
+        .petal4 {
+            top: 15px;
+            left: -10px;
+            transform: rotate(-135deg);
+        }
+        
+        .stem {
+            width: 10px;
+            height: 150px;
+            background-color: #508D69; /* Updated stem color */
+            margin-top: -10px;
+            animation: glowStem 1.5s infinite alternate; /* Glowing effect for stem */
+        }
+        
+        .leaf {
+            position: absolute;
+            width: 35px;
+            height: 60px;
+            background-color: #A1C398; /* Updated leaf color */
+            border-radius: 50%;
+        }
+        
+        .leaf1 {
+            top: 80px;
+            left: -20px;
+            transform: rotate(-40deg);
+        }
+        
+        .leaf2 {
+            top: 95px;
+            right: -20px;
+            transform: rotate(40deg);
+        }
+        
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #FF8A8A, 0 0 10px #FF8A8A; /* Reduced glow start */
+            }
+            100% {
+                box-shadow: 0 0 10px #FF8A8A, 0 0 15px #FF8A8A; /* Reduced glow end */
+            }
+        }
+        
+        @keyframes glowStem {
+            0% {
+                box-shadow: 0 0 5px #A1C398, 0 0 10px #A1C398; /* Reduced glow start */
+            }
+            100% {
+                box-shadow: 0 0 10px #A1C398, 0 0 15px #A1C398; /* Reduced glow end */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Mensive Juwi</h1>
+    <div class="bucket">
+        <div class="garden">
+            <!-- Repeat the .rose div for additional flowers -->
+            <div class="rose">
+                <div class="flower">
+                    <div class="petal petal1"></div>
+                    <div class="petal petal2"></div>
+                    <div class="petal petal3"></div>
+                    <div class="petal petal4"></div>
+                </div>
+                <div class="stem"></div>
+                <div class="leaf leaf1"></div>
+                <div class="leaf leaf2"></div>
+            </div>
+            <div class="rose">
+                <div class="flower">
+                    <div class="petal petal1"></div>
+                    <div class="petal petal2"></div>
+                    <div class="petal petal3"></div>
+                    <div class="petal petal4"></div>
+                </div>
+                <div class="stem"></div>
+                <div class="leaf leaf1"></div>
+                <div class="leaf leaf2"></div>
+            </div>
+            <!-- Repeat the above structure as needed -->
+        </div>
+    </div>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-      <title>Bouquet of Roses</title>
-      <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-      <h1>happy mensive juwi </h1>
-      <div class="bucket">
-          <div class="garden">
-              <!-- Repeat for 20 flowers -->
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <!-- Repeat the .rose div for additional flowers -->
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-              <div class="rose">
-                  <div class="flower">
-                      <div class="petal petal1"></div>
-                      <div class="petal petal2"></div>
-                      <div class="petal petal3"></div>
-                      <div class="petal petal4"></div>
-                  </div>
-                  <div class="stem"></div>
-                  <div class="leaf leaf1"></div>
-                  <div class="leaf leaf2"></div>
-              </div>
-          </div>
-      </div>
-
-      <script>
+    <script>
         const createStars = (count) => {
             for (let i = 0; i < count; i++) {
                 const star = document.createElement('div');
@@ -228,6 +195,5 @@
 
         createStars(150);
     </script>
-  </body>
-  </html>
-  
+</body>
+</html>
